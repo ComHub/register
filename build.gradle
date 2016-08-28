@@ -15,11 +15,11 @@ buildscript {
 
 allprojects {
   ext {
-    androidApplicationId = 'com.fernanependocejas.android10.sample.presentation'
+    androidApplicationId = 'io.comhub.android.register'
     androidVersionCode = 1
     androidVersionName = "1.0"
     testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
-    testApplicationId = 'com.fernandocejas.android10.sample.presentation.test'
+    testApplicationId = 'io.comhub.android.register.presentation.test'
   }
 }
 
