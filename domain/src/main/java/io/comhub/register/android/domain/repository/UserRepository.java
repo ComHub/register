@@ -13,28 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.exception;
+package io.comhub.register.android.domain.repository;
+
+import io.comhub.register.android.domain.User;
+import java.util.List;
+import rx.Observable;
 
 /**
- *  Wrapper around Exceptions used to manage default errors.
+ * Interface that represents a Repository for getting {@link User} related data.
  */
-public class DefaultErrorBundle implements ErrorBundle {
+public interface UserRepository {
+  /**
+   * Get an {@link rx.Observable} which will emit a List of {@link User}.
+   */
+  Observable<List<User>> users();
 
-  private static final String DEFAULT_ERROR_MSG = "Unknown error";
-
-  private final Exception exception;
-
-  public DefaultErrorBundle(Exception exception) {
-    this.exception = exception;
-  }
-
-  @Override
-  public Exception getException() {
-    return exception;
-  }
-
-  @Override
-  public String getErrorMessage() {
-    return (exception != null) ? this.exception.getMessage() : DEFAULT_ERROR_MSG;
-  }
+  /**
+   * Get an {@link rx.Observable} which will emit a {@link User}.
+   *
+   * @param userId The user id used to retrieve user data.
+   */
+  Observable<User> user(final int userId);
 }

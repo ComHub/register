@@ -15,7 +15,7 @@
  */
 package com.fernandocejas.android10.sample.data.exception;
 
-import com.fernandocejas.android10.sample.domain.exception.ErrorBundle;
+import io.comhub.register.android.domain.exception.ErrorBundle;
 
 /**
  * Wrapper around Exceptions used to manage errors in the repository.

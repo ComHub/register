@@ -17,7 +17,7 @@ package io.comhub.register.android.presentation.test.presenter;
 
 import android.content.Context;
 import android.test.AndroidTestCase;
-import com.fernandocejas.android10.sample.domain.interactor.GetUserDetails;
+import io.comhub.register.android.domain.interactor.GetUserDetails;
 import io.comhub.register.android.presentation.mapper.UserModelDataMapper;
 import io.comhub.register.android.presentation.presenter.UserDetailsPresenter;
 import io.comhub.register.android.presentation.view.UserDetailsView;

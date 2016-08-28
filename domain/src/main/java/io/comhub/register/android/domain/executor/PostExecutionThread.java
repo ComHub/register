@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.exception;
+package io.comhub.register.android.domain.executor;
+
+import rx.Scheduler;
 
 /**
- * Interface to represent a wrapper around an {@link java.lang.Exception} to manage errors.
+ * Thread abstraction created to change the execution context from any thread to any other thread.
+ * Useful to encapsulate a UI Thread for example, since some job will be done in background, an
+ * implementation of this interface will change context and update the UI.
  */
-public interface ErrorBundle {
-  Exception getException();
-
-  String getErrorMessage();
+public interface PostExecutionThread {
+  Scheduler getScheduler();
 }

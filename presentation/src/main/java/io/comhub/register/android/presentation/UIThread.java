@@ -15,7 +15,7 @@
  */
 package io.comhub.register.android.presentation;
 
-import com.fernandocejas.android10.sample.domain.executor.PostExecutionThread;
+import io.comhub.register.android.domain.executor.PostExecutionThread;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import rx.Scheduler;

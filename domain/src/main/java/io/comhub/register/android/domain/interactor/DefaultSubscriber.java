@@ -13,31 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.exception;
+package io.comhub.register.android.domain.interactor;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-
-import static org.mockito.Mockito.verify;
-
-public class DefaultErrorBundleTest {
-  private DefaultErrorBundle defaultErrorBundle;
-
-  @Mock
-  private Exception mockException;
-
-  @Before
-  public void setUp() {
-    MockitoAnnotations.initMocks(this);
-    defaultErrorBundle = new DefaultErrorBundle(mockException);
+/**
+ * Default subscriber base class to be used whenever you want default error handling.
+ */
+public class DefaultSubscriber<T> extends rx.Subscriber<T> {
+  @Override public void onCompleted() {
+    // no-op by default.
   }
 
-  @Test
-  public void testGetErrorMessageInteraction() {
-    defaultErrorBundle.getErrorMessage();
+  @Override public void onError(Throwable e) {
+    // no-op by default.
+  }
 
-    verify(mockException).getMessage();
+  @Override public void onNext(T t) {
+    // no-op by default.
   }
 }

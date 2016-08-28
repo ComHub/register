@@ -15,7 +15,7 @@
  */
 package io.comhub.register.android.presentation.test.mapper;
 
-import com.fernandocejas.android10.sample.domain.User;
+import io.comhub.register.android.domain.User;
 import io.comhub.register.android.presentation.mapper.UserModelDataMapper;
 import io.comhub.register.android.presentation.model.UserModel;
 import java.util.ArrayList;

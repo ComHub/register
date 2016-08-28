@@ -16,11 +16,11 @@
 package io.comhub.register.android.presentation.presenter;
 
 import android.support.annotation.NonNull;
-import com.fernandocejas.android10.sample.domain.User;
-import com.fernandocejas.android10.sample.domain.exception.DefaultErrorBundle;
-import com.fernandocejas.android10.sample.domain.exception.ErrorBundle;
-import com.fernandocejas.android10.sample.domain.interactor.DefaultSubscriber;
-import com.fernandocejas.android10.sample.domain.interactor.UseCase;
+import io.comhub.register.android.domain.User;
+import io.comhub.register.android.domain.exception.DefaultErrorBundle;
+import io.comhub.register.android.domain.exception.ErrorBundle;
+import io.comhub.register.android.domain.interactor.DefaultSubscriber;
+import io.comhub.register.android.domain.interactor.UseCase;
 import io.comhub.register.android.presentation.exception.ErrorMessageFactory;
 import io.comhub.register.android.presentation.internal.di.PerActivity;
 import io.comhub.register.android.presentation.mapper.UserModelDataMapper;

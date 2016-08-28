@@ -20,7 +20,7 @@ import com.fernandocejas.android10.sample.data.entity.UserEntity;
 import com.fernandocejas.android10.sample.data.entity.mapper.UserEntityDataMapper;
 import com.fernandocejas.android10.sample.data.repository.datasource.UserDataStore;
 import com.fernandocejas.android10.sample.data.repository.datasource.UserDataStoreFactory;
-import com.fernandocejas.android10.sample.domain.User;
+import io.comhub.register.android.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;

@@ -13,31 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.interactor;
+package io.comhub.register.android.domain.interactor;
 
-import com.fernandocejas.android10.sample.domain.User;
-import com.fernandocejas.android10.sample.domain.executor.PostExecutionThread;
-import com.fernandocejas.android10.sample.domain.executor.ThreadExecutor;
-import com.fernandocejas.android10.sample.domain.repository.UserRepository;
+import io.comhub.register.android.domain.User;
+import io.comhub.register.android.domain.executor.PostExecutionThread;
+import io.comhub.register.android.domain.executor.ThreadExecutor;
+import io.comhub.register.android.domain.repository.UserRepository;
 import javax.inject.Inject;
 import rx.Observable;
 
 /**
  * This class is an implementation of {@link UseCase} that represents a use case for
- * retrieving a collection of all {@link User}.
+ * retrieving data related to an specific {@link User}.
  */
-public class GetUserList extends UseCase {
+public class GetUserDetails extends UseCase {
 
+  private final int userId;
   private final UserRepository userRepository;
 
   @Inject
-  public GetUserList(UserRepository userRepository, ThreadExecutor threadExecutor,
-      PostExecutionThread postExecutionThread) {
+  public GetUserDetails(int userId, UserRepository userRepository,
+      ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
     super(threadExecutor, postExecutionThread);
+    this.userId = userId;
     this.userRepository = userRepository;
   }
 
-  @Override public Observable buildUseCaseObservable() {
-    return this.userRepository.users();
+  @Override protected Observable buildUseCaseObservable() {
+    return this.userRepository.user(this.userId);
   }
 }

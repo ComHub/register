@@ -13,13 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.executor;
+package io.comhub.register.android.domain;
 
-import java.util.concurrent.Executor;
+import org.junit.Before;
+import org.junit.Test;
 
-/**
- * Executor implementation can be based on different frameworks or techniques of asynchronous
- * execution, but every implementation will execute the
- * {@link com.fernandocejas.android10.sample.domain.interactor.UseCase} out of the UI thread.
- */
-public interface ThreadExecutor extends Executor {}
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
+public class UserTest {
+
+  private static final int FAKE_USER_ID = 8;
+
+  private User user;
+
+  @Before
+  public void setUp() {
+    user = new User(FAKE_USER_ID);
+  }
+
+  @Test
+  public void testUserConstructorHappyCase() {
+    int userId = user.getUserId();
+
+    assertThat(userId, is(FAKE_USER_ID));
+  }
+}

@@ -13,25 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.domain.repository;
-
-import com.fernandocejas.android10.sample.domain.User;
-import java.util.List;
-import rx.Observable;
+package io.comhub.register.android.domain.exception;
 
 /**
- * Interface that represents a Repository for getting {@link User} related data.
+ * Interface to represent a wrapper around an {@link java.lang.Exception} to manage errors.
  */
-public interface UserRepository {
-  /**
-   * Get an {@link rx.Observable} which will emit a List of {@link User}.
-   */
-  Observable<List<User>> users();
+public interface ErrorBundle {
+  Exception getException();
 
-  /**
-   * Get an {@link rx.Observable} which will emit a {@link User}.
-   *
-   * @param userId The user id used to retrieve user data.
-   */
-  Observable<User> user(final int userId);
+  String getErrorMessage();
 }

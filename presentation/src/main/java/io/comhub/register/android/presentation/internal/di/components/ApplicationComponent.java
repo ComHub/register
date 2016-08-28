@@ -16,9 +16,9 @@
 package io.comhub.register.android.presentation.internal.di.components;
 
 import android.content.Context;
-import com.fernandocejas.android10.sample.domain.executor.PostExecutionThread;
-import com.fernandocejas.android10.sample.domain.executor.ThreadExecutor;
-import com.fernandocejas.android10.sample.domain.repository.UserRepository;
+import io.comhub.register.android.domain.executor.PostExecutionThread;
+import io.comhub.register.android.domain.executor.ThreadExecutor;
+import io.comhub.register.android.domain.repository.UserRepository;
 import io.comhub.register.android.presentation.internal.di.modules.ApplicationModule;
 import io.comhub.register.android.presentation.view.activity.BaseActivity;
 import dagger.Component;

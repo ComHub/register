@@ -19,7 +19,7 @@ import android.content.Context;
 import com.fernandocejas.android10.sample.data.cache.serializer.JsonSerializer;
 import com.fernandocejas.android10.sample.data.entity.UserEntity;
 import com.fernandocejas.android10.sample.data.exception.UserNotFoundException;
-import com.fernandocejas.android10.sample.domain.executor.ThreadExecutor;
+import io.comhub.register.android.domain.executor.ThreadExecutor;
 import java.io.File;
 import javax.inject.Inject;
 import javax.inject.Singleton;
