@@ -1,4 +1,4 @@
-package io.comhub.register.android.presentation.view.user.login;
+package io.comhub.register.android.presentation.view.home.product;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,45 +6,40 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.comhub.register.android.presentation.R;
-import io.comhub.register.android.presentation.internal.di.components.UserComponent;
-import io.comhub.register.android.presentation.model.UserModel;
+import io.comhub.register.android.presentation.internal.di.components.HomeComponent;
 import io.comhub.register.android.presentation.view.fragment.BaseFragment;
 import javax.inject.Inject;
 
 /**
- * Fragment that shows the login view
+ * Fragment that shows the grid of products
  */
-public class UserLoginFragment extends BaseFragment implements UserLoginView {
+public class ProductGridFragment extends BaseFragment implements ProductGridView {
 
-  @Inject UserLoginPresenter userLoginPresenter;
+  @Inject ProductGridPresenter productGridPresenter;
 
-  @Bind(R.id.et_email) EditText et_email;
-  @Bind(R.id.et_password) EditText et_password;
   @Bind(R.id.rl_progress) RelativeLayout rl_progress;
   @Bind(R.id.rl_retry) RelativeLayout rl_retry;
   @Bind(R.id.bt_retry) Button bt_retry;
 
-  public UserLoginFragment() {
+  public ProductGridFragment() {
     setRetainInstance(true);
   }
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    this.getComponent(UserComponent.class).inject(this);
+    this.getComponent(HomeComponent.class).inject(this);
   }
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-    final View fragmentView = inflater.inflate(R.layout.fragment_user_login, container, false);
+    final View fragmentView = inflater.inflate(R.layout.fragment_product_grid, container, false);
     ButterKnife.bind(this, fragmentView);
     return fragmentView;
   }
@@ -58,25 +53,22 @@ public class UserLoginFragment extends BaseFragment implements UserLoginView {
   }
 
   private void initialize() {
-    this.userLoginPresenter.setView(this);
-    this.loadUserDetails();
+    this.productGridPresenter.setView(this);
   }
 
   private void setupUI() {
-    this.et_email.setText("javier.tarazaga@comhub.io");
-    this.et_password.setText("devtest");
   }
 
   @Override
   public void onResume() {
     super.onResume();
-    this.userLoginPresenter.resume();
+    this.productGridPresenter.resume();
   }
 
   @Override
   public void onPause() {
     super.onPause();
-    this.userLoginPresenter.pause();
+    this.productGridPresenter.pause();
   }
 
   @Override
@@ -88,14 +80,7 @@ public class UserLoginFragment extends BaseFragment implements UserLoginView {
   @Override
   public void onDestroy() {
     super.onDestroy();
-    this.userLoginPresenter.destroy();
-  }
-
-  @Override
-  public void renderUser(UserModel user) {
-    if (user != null) {
-      Toast.makeText(getActivity(), user.getFullName(), Toast.LENGTH_LONG).show();
-    }
+    this.productGridPresenter.destroy();
   }
 
   @Override
@@ -128,22 +113,7 @@ public class UserLoginFragment extends BaseFragment implements UserLoginView {
     return getActivity().getApplicationContext();
   }
 
-  @OnClick(R.id.bt_login)
-  public void onLoginClicked(View view) {
-    this.userLoginPresenter.performLogin(this.et_email.getText().toString(), this.et_password.getText().toString());
-  }
-
-  /**
-   * Loads all users.
-   */
-  private void loadUserDetails() {
-    if (this.userLoginPresenter != null) {
-      this.userLoginPresenter.initialize();
-    }
-  }
-
   @OnClick(R.id.bt_retry)
   void onButtonRetryClick() {
-    UserLoginFragment.this.loadUserDetails();
   }
 }

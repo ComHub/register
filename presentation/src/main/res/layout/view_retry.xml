@@ -6,7 +6,7 @@
 
   <Button
     android:id="@+id/bt_retry"
-    style="@style/AppTheme.Button"
+    style="@style/Theme.ComHub.Register.Button"
     android:text="@string/btn_text_retry" />
 
 </RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ****** -->
+    <!-- GENERAL COLOURS -->
+    <!-- ****** -->
+    <color name="colorPrimary">#2C313D</color>
+    <color name="colorPrimaryDark">#282C37</color>
+
+    <color name="colorSecondary">#404040</color>
+    <color name="colorTertiary">#faa800</color>
+
+    <color name="colorAccent">#8a0404</color>
+    <color name="colorWindowBackground">#ffffff</color>
+    <color name="colorPressed">#44404040</color>
+    <color name="colorRipple">#AA999999</color>
+
+    <color name="textColor">#000000</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="textColorSecondary">#202020</color>
+
+    <color name="colorLightGrey">#1f1d1d</color>
+    <color name="colorToolbarPrimary">#2C313D</color>
+    <color name="textColorOnLightBackground">#000000</color>
+
+
+</resources>

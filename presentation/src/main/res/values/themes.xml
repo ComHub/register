@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="None"/>
+
+  <!-- Application theme. -->
+  <style name="Theme.ComHub.Register.Base" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowActionBar">false</item>
+    <item name="android:windowBackground">@color/colorWindowBackground</item>
+    <item name="android:textColor">@color/textColor</item>
+    <item name="android:textColorPrimary">@color/textColorPrimary</item>
+    <!--<item name="vpiCirclePageIndicatorStyle">@style/vpiCirclePageIndicatorStyle</item>-->
+    <!--<item name="clickableItemBackground">@drawable/item_background_holo_light</item>-->
+
+    <item name="colorControlNormal">@color/textColor</item>
+
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+    <!-- colorAccent is used as the default value for colorControlActivated which is used to tint widgets-->
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <!--<item name="sidemenu_row_selected_items">@color/sidemenu_row_selected_items</item>-->
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight & colorSwitchThumbNormal. -->
+  </style>
+
+  <style name="Theme.ComHub.Register" parent="Theme.ComHub.Register.Base"/>
+
+  <style name="Theme.ComHub.Register.NoActionBar.Fullscreen" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:windowFullscreen">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+
+  <style name="Theme.ComHub.Register.ProgressBar">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerInParent">true</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:visibility">visible</item>
+  </style>
+
+  <style name="Theme.ComHub.Register.Button">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_gravity">center</item>
+  </style>
+
+  <style name="Theme.ComHub.Register.TextViewHeader">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">@dimen/header_margin</item>
+    <item name="android:textSize">@dimen/header_text_size</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:gravity">center</item>
+    <item name="android:background">@android:color/background_light</item>
+  </style>
+
+  <style name="Theme.ComHub.Register.TextViewTitle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginTop">@dimen/header_margin</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+</resources>

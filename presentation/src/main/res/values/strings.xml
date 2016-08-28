@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="app_name">Android Clean Architecture</string>
-  <string name="url">http://www.android10.org/</string>
+  <string name="app_name">ComHub Register</string>
+  <string name="url">http://www.comhub.io/</string>
 
   <string name="activity_title_user_login">User Login</string>
   <string name="activity_title_user_register">New Account</string>

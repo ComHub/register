@@ -3,7 +3,6 @@ package io.comhub.register.android.presentation.view.user.login;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Window;
 import io.comhub.register.android.presentation.R;
 import io.comhub.register.android.presentation.internal.di.HasComponent;
 import io.comhub.register.android.presentation.internal.di.components.DaggerUserComponent;
@@ -22,7 +21,6 @@ public class UserLoginActivity extends BaseActivity implements HasComponent<User
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
     setContentView(R.layout.activity_layout);
 
     this.initializeActivity(savedInstanceState);

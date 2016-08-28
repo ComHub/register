@@ -12,7 +12,7 @@
 
   <TextView
     android:id="@+id/tv_fullname"
-    style="@style/AppTheme.TextViewHeader"
+    style="@style/Theme.ComHub.Register.TextViewHeader"
     android:freezesText="true" />
 
   <LinearLayout
@@ -23,7 +23,7 @@
     android:orientation="vertical">
 
     <TextView
-      style="@style/AppTheme.TextViewTitle"
+      style="@style/Theme.ComHub.Register.TextViewTitle"
       android:text="@string/view_text_email" />
 
     <TextView
@@ -33,7 +33,7 @@
       android:freezesText="true" />
 
     <TextView
-      style="@style/AppTheme.TextViewTitle"
+      style="@style/Theme.ComHub.Register.TextViewTitle"
       android:text="@string/view_text_followers" />
 
     <TextView
@@ -43,7 +43,7 @@
       android:freezesText="true" />
 
     <TextView
-      style="@style/AppTheme.TextViewTitle"
+      style="@style/Theme.ComHub.Register.TextViewTitle"
       android:text="@string/view_text_description" />
 
     <TextView
