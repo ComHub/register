@@ -17,7 +17,8 @@ package io.comhub.register.android.domain.interactor;
 
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
-import io.comhub.register.android.domain.repository.UserRepository;
+import io.comhub.register.android.domain.user.UserRepository;
+import io.comhub.register.android.domain.user.interactor.GetUserList;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;

@@ -16,7 +16,7 @@
 package io.comhub.register.android.data.cache.serializer;
 
 import com.google.gson.Gson;
-import io.comhub.register.android.data.entity.UserEntity;
+import io.comhub.register.android.data.user.entity.UserEntity;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 

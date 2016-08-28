@@ -19,10 +19,11 @@ import dagger.Module;
 import dagger.Provides;
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
-import io.comhub.register.android.domain.interactor.GetUserDetails;
-import io.comhub.register.android.domain.interactor.GetUserList;
+import io.comhub.register.android.domain.user.interactor.GetUserDetails;
+import io.comhub.register.android.domain.user.interactor.GetUserList;
 import io.comhub.register.android.domain.interactor.UseCase;
-import io.comhub.register.android.domain.repository.UserRepository;
+import io.comhub.register.android.domain.user.UserRepository;
+import io.comhub.register.android.domain.user.interactor.UserLogin;
 import io.comhub.register.android.presentation.internal.di.PerActivity;
 import javax.inject.Named;
 
@@ -32,11 +33,11 @@ import javax.inject.Named;
 @Module
 public class UserModule {
 
-  private int userId = -1;
+  private String userId = "-1";
 
   public UserModule() {}
 
-  public UserModule(int userId) {
+  public UserModule(String userId) {
     this.userId = userId;
   }
 
@@ -55,5 +56,14 @@ public class UserModule {
     UserRepository userRepository, ThreadExecutor threadExecutor,
     PostExecutionThread postExecutionThread) {
     return new GetUserDetails(userId, userRepository, threadExecutor, postExecutionThread);
+  }
+
+  @Provides
+  @PerActivity
+  @Named("userLogin")
+  UseCase providesUserLogin(
+    UserRepository userRepository, ThreadExecutor threadExecutor,
+    PostExecutionThread postExecutionThread) {
+    return new UserLogin(userRepository, threadExecutor, postExecutionThread);
   }
 }

@@ -15,7 +15,7 @@
  */
 package io.comhub.register.android.data.net;
 
-import io.comhub.register.android.data.entity.UserEntity;
+import io.comhub.register.android.data.user.entity.UserEntity;
 import java.util.List;
 import rx.Observable;
 
@@ -28,6 +28,7 @@ public interface RestApi {
 
   /** Api url for getting all users */
   String API_URL_GET_USER_LIST = API_BASE_URL + "users.json";
+
   /** Api url for getting a user profile: Remember to concatenate id + 'json' */
   String API_URL_GET_USER_DETAILS = API_BASE_URL + "user_";
 

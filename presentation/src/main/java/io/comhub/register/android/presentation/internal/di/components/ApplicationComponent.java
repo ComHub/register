@@ -19,7 +19,7 @@ import android.content.Context;
 import dagger.Component;
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
-import io.comhub.register.android.domain.repository.UserRepository;
+import io.comhub.register.android.domain.user.UserRepository;
 import io.comhub.register.android.presentation.internal.di.modules.ApplicationModule;
 import io.comhub.register.android.presentation.view.activity.BaseActivity;
 import javax.inject.Singleton;

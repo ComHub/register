@@ -17,7 +17,7 @@ package io.comhub.register.android.presentation.test.exception;
 
 import android.test.AndroidTestCase;
 import io.comhub.register.android.data.exception.NetworkConnectionException;
-import io.comhub.register.android.data.exception.UserNotFoundException;
+import io.comhub.register.android.data.user.exception.UserNotFoundException;
 import io.comhub.register.android.presentation.R;
 import io.comhub.register.android.presentation.exception.ErrorMessageFactory;
 

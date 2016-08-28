@@ -18,13 +18,11 @@ package io.comhub.register.android.presentation.internal.di.modules;
 import android.content.Context;
 import dagger.Module;
 import dagger.Provides;
-import io.comhub.register.android.data.cache.UserCache;
-import io.comhub.register.android.data.cache.UserCacheImpl;
 import io.comhub.register.android.data.executor.JobExecutor;
-import io.comhub.register.android.data.repository.UserDataRepository;
+import io.comhub.register.android.data.user.repository.UserDataRepository;
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
-import io.comhub.register.android.domain.repository.UserRepository;
+import io.comhub.register.android.domain.user.UserRepository;
 import io.comhub.register.android.presentation.AndroidApplication;
 import io.comhub.register.android.presentation.UIThread;
 import javax.inject.Singleton;
@@ -57,12 +55,6 @@ public class ApplicationModule {
   @Singleton
   PostExecutionThread providePostExecutionThread(UIThread uiThread) {
     return uiThread;
-  }
-
-  @Provides
-  @Singleton
-  UserCache provideUserCache(UserCacheImpl userCache) {
-    return userCache;
   }
 
   @Provides

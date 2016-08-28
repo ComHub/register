@@ -21,6 +21,7 @@ import io.comhub.register.android.presentation.internal.di.modules.ActivityModul
 import io.comhub.register.android.presentation.internal.di.modules.UserModule;
 import io.comhub.register.android.presentation.view.fragment.UserDetailsFragment;
 import io.comhub.register.android.presentation.view.fragment.UserListFragment;
+import io.comhub.register.android.presentation.view.user.login.UserLoginFragment;
 
 /**
  * A scope {@link io.comhub.register.android.presentation.internal.di.PerActivity} component.
@@ -30,7 +31,7 @@ import io.comhub.register.android.presentation.view.fragment.UserListFragment;
 @Component(dependencies = ApplicationComponent.class, modules = { ActivityModule.class, UserModule.class })
 public interface UserComponent extends ActivityComponent {
 
+  void inject(UserLoginFragment userLoginFragment);
   void inject(UserListFragment userListFragment);
-
   void inject(UserDetailsFragment userDetailsFragment);
 }

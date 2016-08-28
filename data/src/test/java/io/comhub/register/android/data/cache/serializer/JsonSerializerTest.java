@@ -16,7 +16,7 @@
 package io.comhub.register.android.data.cache.serializer;
 
 import io.comhub.register.android.data.ApplicationTestCase;
-import io.comhub.register.android.data.entity.UserEntity;
+import io.comhub.register.android.data.user.entity.UserEntity;
 import org.junit.Before;
 import org.junit.Test;
 

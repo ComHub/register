@@ -71,4 +71,14 @@ public abstract class UseCase {
       subscription.unsubscribe();
     }
   }
+
+  /**
+   * Exception thrown when {@link UseCase#execute(Subscriber)} has been called before an init method on the UseCases that needs initialization.
+   */
+  public static class UseCaseNotInitialisedException extends RuntimeException {
+
+    public UseCaseNotInitialisedException(String message) {
+      super(message);
+    }
+  }
 }

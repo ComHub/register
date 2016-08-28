@@ -28,4 +28,12 @@ public class MainActivity extends io.comhub.register.android.presentation.view.a
   void navigateToUserList() {
     this.navigator.navigateToUserList(this);
   }
+
+  /**
+   * Goes to the user login screen.
+   */
+  @OnClick(R.id.btn_userLogin)
+  void navigateToUserLogin() {
+    this.navigator.navigateToUserLogin(this);
+  }
 }

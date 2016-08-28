@@ -17,7 +17,7 @@ package io.comhub.register.android.presentation.presenter;
 
 import android.support.annotation.NonNull;
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
-import io.comhub.register.android.domain.User;
+import io.comhub.register.android.domain.user.User;
 import io.comhub.register.android.domain.exception.DefaultErrorBundle;
 import io.comhub.register.android.domain.exception.ErrorBundle;
 import io.comhub.register.android.domain.interactor.DefaultSubscriber;

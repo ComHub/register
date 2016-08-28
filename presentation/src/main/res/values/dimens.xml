@@ -13,4 +13,9 @@
   <dimen name="lv_row_text_size">20sp</dimen>
   <dimen name="lv_row_icon_width">50dp</dimen>
   <dimen name="lv_row_icon_padding">5dp</dimen>
+
+  <!-- ****** -->
+  <!-- LOGIN STUFF -->
+  <!-- ****** -->
+  <dimen name="login_edit_text_height">44dp</dimen>
 </resources>

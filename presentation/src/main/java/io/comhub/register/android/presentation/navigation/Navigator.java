@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import io.comhub.register.android.presentation.view.activity.UserDetailsActivity;
 import io.comhub.register.android.presentation.view.activity.UserListActivity;
+import io.comhub.register.android.presentation.view.user.login.UserLoginActivity;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -32,6 +33,19 @@ public class Navigator {
   public Navigator() {
     //empty
   }
+
+  /**
+   * Goes to the user login screen.
+   *
+   * @param context A Context needed to open the destiny activity.
+   */
+  public void navigateToUserLogin(Context context) {
+    if (context != null) {
+      Intent intentToLaunch = UserLoginActivity.getCallingIntent(context);
+      context.startActivity(intentToLaunch);
+    }
+  }
+
 
   /**
    * Goes to the user list screen.
@@ -50,7 +64,7 @@ public class Navigator {
    *
    * @param context A Context needed to open the destiny activity.
    */
-  public void navigateToUserDetails(Context context, int userId) {
+  public void navigateToUserDetails(Context context, String userId) {
     if (context != null) {
       Intent intentToLaunch = UserDetailsActivity.getCallingIntent(context, userId);
       context.startActivity(intentToLaunch);

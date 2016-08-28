@@ -20,9 +20,9 @@ package io.comhub.register.android.presentation.model;
  */
 public class UserModel {
 
-  private final int userId;
+  private final String userId;
 
-  public UserModel(int userId) {
+  public UserModel(String userId) {
     this.userId = userId;
   }
 
@@ -32,7 +32,7 @@ public class UserModel {
   private String description;
   private int followers;
 
-  public int getUserId() {
+  public String getUserId() {
     return userId;
   }
 

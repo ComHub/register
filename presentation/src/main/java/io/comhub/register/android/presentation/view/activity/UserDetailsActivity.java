@@ -24,13 +24,13 @@ public class UserDetailsActivity extends BaseActivity implements HasComponent<Us
   private static final String INTENT_EXTRA_PARAM_USER_ID = "org.android10.INTENT_PARAM_USER_ID";
   private static final String INSTANCE_STATE_PARAM_USER_ID = "org.android10.STATE_PARAM_USER_ID";
 
-  public static Intent getCallingIntent(Context context, int userId) {
+  public static Intent getCallingIntent(Context context, String userId) {
     Intent callingIntent = new Intent(context, UserDetailsActivity.class);
     callingIntent.putExtra(INTENT_EXTRA_PARAM_USER_ID, userId);
     return callingIntent;
   }
 
-  private int userId;
+  private String userId;
   private UserComponent userComponent;
 
   @Override
@@ -46,7 +46,7 @@ public class UserDetailsActivity extends BaseActivity implements HasComponent<Us
   @Override
   protected void onSaveInstanceState(Bundle outState) {
     if (outState != null) {
-      outState.putInt(INSTANCE_STATE_PARAM_USER_ID, this.userId);
+      outState.putString(INSTANCE_STATE_PARAM_USER_ID, this.userId);
     }
     super.onSaveInstanceState(outState);
   }
@@ -56,10 +56,10 @@ public class UserDetailsActivity extends BaseActivity implements HasComponent<Us
    */
   private void initializeActivity(Bundle savedInstanceState) {
     if (savedInstanceState == null) {
-      this.userId = getIntent().getIntExtra(INTENT_EXTRA_PARAM_USER_ID, -1);
+      this.userId = getIntent().getStringExtra(INTENT_EXTRA_PARAM_USER_ID);
       addFragment(R.id.fragmentContainer, new UserDetailsFragment());
     } else {
-      this.userId = savedInstanceState.getInt(INSTANCE_STATE_PARAM_USER_ID);
+      this.userId = savedInstanceState.getString(INSTANCE_STATE_PARAM_USER_ID);
     }
   }
 

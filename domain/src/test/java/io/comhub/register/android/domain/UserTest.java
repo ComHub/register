@@ -15,6 +15,7 @@
  */
 package io.comhub.register.android.domain;
 
+import io.comhub.register.android.domain.user.User;
 import org.junit.Before;
 import org.junit.Test;
 
