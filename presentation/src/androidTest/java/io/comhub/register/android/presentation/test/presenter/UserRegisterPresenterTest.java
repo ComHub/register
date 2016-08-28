@@ -29,7 +29,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.verify;
 
-public class UserLoginPresenterTest extends AndroidTestCase {
+public class UserRegisterPresenterTest extends AndroidTestCase {
 
   private static final int FAKE_USER_ID = 123;
 

@@ -20,6 +20,7 @@ import android.content.Intent;
 import io.comhub.register.android.presentation.view.activity.UserDetailsActivity;
 import io.comhub.register.android.presentation.view.activity.UserListActivity;
 import io.comhub.register.android.presentation.view.user.login.UserLoginActivity;
+import io.comhub.register.android.presentation.view.user.register.UserRegisterActivity;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -42,6 +43,18 @@ public class Navigator {
   public void navigateToUserLogin(Context context) {
     if (context != null) {
       Intent intentToLaunch = UserLoginActivity.getCallingIntent(context);
+      context.startActivity(intentToLaunch);
+    }
+  }
+
+  /**
+   * Goes to the user registration screen.
+   *
+   * @param context A Context needed to open the destiny activity.
+   */
+  public void navigateToRegistration(Context context) {
+    if (context != null) {
+      Intent intentToLaunch = UserRegisterActivity.getCallingIntent(context);
       context.startActivity(intentToLaunch);
     }
   }
