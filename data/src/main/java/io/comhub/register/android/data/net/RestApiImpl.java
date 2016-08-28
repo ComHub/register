@@ -18,10 +18,10 @@ package io.comhub.register.android.data.net;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import com.fernandocejas.frodo.annotation.RxLogObservable;
 import io.comhub.register.android.data.entity.UserEntity;
 import io.comhub.register.android.data.entity.mapper.UserEntityJsonMapper;
 import io.comhub.register.android.data.exception.NetworkConnectionException;
-import com.fernandocejas.frodo.annotation.RxLogObservable;
 import java.net.MalformedURLException;
 import java.util.List;
 import rx.Observable;
@@ -49,14 +49,15 @@ public class RestApiImpl implements RestApi {
   }
 
   @RxLogObservable
-  @Override public Observable<List<UserEntity>> userEntityList() {
+  @Override
+  public Observable<List<UserEntity>> userEntityList() {
     return Observable.create(subscriber -> {
       if (isThereInternetConnection()) {
         try {
           String responseUserEntities = getUserEntitiesFromApi();
           if (responseUserEntities != null) {
             subscriber.onNext(userEntityJsonMapper.transformUserEntityCollection(
-                responseUserEntities));
+              responseUserEntities));
             subscriber.onCompleted();
           } else {
             subscriber.onError(new NetworkConnectionException());
@@ -71,7 +72,8 @@ public class RestApiImpl implements RestApi {
   }
 
   @RxLogObservable
-  @Override public Observable<UserEntity> userEntityById(final int userId) {
+  @Override
+  public Observable<UserEntity> userEntityById(final int userId) {
     return Observable.create(subscriber -> {
       if (isThereInternetConnection()) {
         try {
@@ -109,7 +111,7 @@ public class RestApiImpl implements RestApi {
     boolean isConnected;
 
     ConnectivityManager connectivityManager =
-        (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
+      (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
     NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
     isConnected = (networkInfo != null && networkInfo.isConnectedOrConnecting());
 

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,10 +15,10 @@
  */
 package io.comhub.register.android.data.entity.mapper;
 
-import io.comhub.register.android.data.entity.UserEntity;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import io.comhub.register.android.data.entity.UserEntity;
 import java.lang.reflect.Type;
 import java.util.List;
 import javax.inject.Inject;
@@ -61,7 +61,7 @@ public class UserEntityJsonMapper {
    * @throws com.google.gson.JsonSyntaxException if the json string is not a valid json structure.
    */
   public List<UserEntity> transformUserEntityCollection(String userListJsonResponse)
-      throws JsonSyntaxException {
+    throws JsonSyntaxException {
 
     List<UserEntity> userEntityCollection;
     try {

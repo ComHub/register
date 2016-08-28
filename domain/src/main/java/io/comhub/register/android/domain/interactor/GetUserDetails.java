@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -33,13 +33,14 @@ public class GetUserDetails extends UseCase {
 
   @Inject
   public GetUserDetails(int userId, UserRepository userRepository,
-      ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
+                        ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
     super(threadExecutor, postExecutionThread);
     this.userId = userId;
     this.userRepository = userRepository;
   }
 
-  @Override protected Observable buildUseCaseObservable() {
+  @Override
+  protected Observable buildUseCaseObservable() {
     return this.userRepository.user(this.userId);
   }
 }

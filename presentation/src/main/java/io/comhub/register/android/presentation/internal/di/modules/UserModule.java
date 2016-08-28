@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,8 @@
  */
 package io.comhub.register.android.presentation.internal.di.modules;
 
+import dagger.Module;
+import dagger.Provides;
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
 import io.comhub.register.android.domain.interactor.GetUserDetails;
@@ -22,8 +24,6 @@ import io.comhub.register.android.domain.interactor.GetUserList;
 import io.comhub.register.android.domain.interactor.UseCase;
 import io.comhub.register.android.domain.repository.UserRepository;
 import io.comhub.register.android.presentation.internal.di.PerActivity;
-import dagger.Module;
-import dagger.Provides;
 import javax.inject.Named;
 
 /**
@@ -40,14 +40,20 @@ public class UserModule {
     this.userId = userId;
   }
 
-  @Provides @PerActivity @Named("userList") UseCase provideGetUserListUseCase(
-      GetUserList getUserList) {
+  @Provides
+  @PerActivity
+  @Named("userList")
+  UseCase provideGetUserListUseCase(
+    GetUserList getUserList) {
     return getUserList;
   }
 
-  @Provides @PerActivity @Named("userDetails") UseCase provideGetUserDetailsUseCase(
-      UserRepository userRepository, ThreadExecutor threadExecutor,
-      PostExecutionThread postExecutionThread) {
+  @Provides
+  @PerActivity
+  @Named("userDetails")
+  UseCase provideGetUserDetailsUseCase(
+    UserRepository userRepository, ThreadExecutor threadExecutor,
+    PostExecutionThread postExecutionThread) {
     return new GetUserDetails(userId, userRepository, threadExecutor, postExecutionThread);
   }
 }

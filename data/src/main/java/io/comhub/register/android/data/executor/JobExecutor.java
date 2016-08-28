@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -50,10 +50,12 @@ public class JobExecutor implements ThreadExecutor {
     this.workQueue = new LinkedBlockingQueue<>();
     this.threadFactory = new JobThreadFactory();
     this.threadPoolExecutor = new ThreadPoolExecutor(INITIAL_POOL_SIZE, MAX_POOL_SIZE,
-        KEEP_ALIVE_TIME, KEEP_ALIVE_TIME_UNIT, this.workQueue, this.threadFactory);
+                                                     KEEP_ALIVE_TIME, KEEP_ALIVE_TIME_UNIT, this.workQueue,
+                                                     this.threadFactory);
   }
 
-  @Override public void execute(Runnable runnable) {
+  @Override
+  public void execute(Runnable runnable) {
     if (runnable == null) {
       throw new IllegalArgumentException("Runnable to execute cannot be null");
     }
@@ -61,10 +63,12 @@ public class JobExecutor implements ThreadExecutor {
   }
 
   private static class JobThreadFactory implements ThreadFactory {
+
     private static final String THREAD_NAME = "android_";
     private int counter = 0;
 
-    @Override public Thread newThread(Runnable runnable) {
+    @Override
+    public Thread newThread(Runnable runnable) {
       return new Thread(runnable, THREAD_NAME + counter++);
     }
   }

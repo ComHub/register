@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -117,10 +117,10 @@ public class FileManager {
    * @param value A long representing the value to be inserted.
    */
   public void writeToPreferences(Context context, String preferenceFileName, String key,
-      long value) {
+                                 long value) {
 
     SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
-        Context.MODE_PRIVATE);
+                                                                       Context.MODE_PRIVATE);
     SharedPreferences.Editor editor = sharedPreferences.edit();
     editor.putLong(key, value);
     editor.apply();
@@ -136,7 +136,7 @@ public class FileManager {
    */
   public long getFromPreferences(Context context, String preferenceFileName, String key) {
     SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName,
-        Context.MODE_PRIVATE);
+                                                                       Context.MODE_PRIVATE);
     return sharedPreferences.getLong(key, 0);
   }
 }

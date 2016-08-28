@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,8 +17,8 @@ package io.comhub.register.android.domain.interactor;
 
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
-import rx.Subscriber;
 import rx.Observable;
+import rx.Subscriber;
 import rx.Subscription;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.Subscriptions;
@@ -39,7 +39,7 @@ public abstract class UseCase {
   private Subscription subscription = Subscriptions.empty();
 
   protected UseCase(ThreadExecutor threadExecutor,
-      PostExecutionThread postExecutionThread) {
+                    PostExecutionThread postExecutionThread) {
     this.threadExecutor = threadExecutor;
     this.postExecutionThread = postExecutionThread;
   }
@@ -58,9 +58,9 @@ public abstract class UseCase {
   @SuppressWarnings("unchecked")
   public void execute(Subscriber useCaseSubscriber) {
     this.subscription = this.buildUseCaseObservable()
-        .subscribeOn(Schedulers.from(threadExecutor))
-        .observeOn(postExecutionThread.getScheduler())
-        .subscribe(useCaseSubscriber);
+                            .subscribeOn(Schedulers.from(threadExecutor))
+                            .observeOn(postExecutionThread.getScheduler())
+                            .subscribe(useCaseSubscriber);
   }
 
   /**

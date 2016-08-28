@@ -16,6 +16,7 @@
 package io.comhub.register.android.presentation.presenter;
 
 import android.support.annotation.NonNull;
+import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import io.comhub.register.android.domain.User;
 import io.comhub.register.android.domain.exception.DefaultErrorBundle;
 import io.comhub.register.android.domain.exception.ErrorBundle;
@@ -26,7 +27,6 @@ import io.comhub.register.android.presentation.internal.di.PerActivity;
 import io.comhub.register.android.presentation.mapper.UserModelDataMapper;
 import io.comhub.register.android.presentation.model.UserModel;
 import io.comhub.register.android.presentation.view.UserDetailsView;
-import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -44,7 +44,7 @@ public class UserDetailsPresenter implements Presenter {
 
   @Inject
   public UserDetailsPresenter(@Named("userDetails") UseCase getUserDetailsUseCase,
-      UserModelDataMapper userModelDataMapper) {
+                              UserModelDataMapper userModelDataMapper) {
     this.getUserDetailsUseCase = getUserDetailsUseCase;
     this.userModelDataMapper = userModelDataMapper;
   }
@@ -53,11 +53,14 @@ public class UserDetailsPresenter implements Presenter {
     this.viewDetailsView = view;
   }
 
-  @Override public void resume() {}
+  @Override
+  public void resume() {}
 
-  @Override public void pause() {}
+  @Override
+  public void pause() {}
 
-  @Override public void destroy() {
+  @Override
+  public void destroy() {
     this.getUserDetailsUseCase.unsubscribe();
     this.viewDetailsView = null;
   }
@@ -96,7 +99,7 @@ public class UserDetailsPresenter implements Presenter {
 
   private void showErrorMessage(ErrorBundle errorBundle) {
     String errorMessage = ErrorMessageFactory.create(this.viewDetailsView.context(),
-        errorBundle.getException());
+                                                     errorBundle.getException());
     this.viewDetailsView.showError(errorMessage);
   }
 
@@ -112,17 +115,20 @@ public class UserDetailsPresenter implements Presenter {
   @RxLogSubscriber
   private final class UserDetailsSubscriber extends DefaultSubscriber<User> {
 
-    @Override public void onCompleted() {
+    @Override
+    public void onCompleted() {
       UserDetailsPresenter.this.hideViewLoading();
     }
 
-    @Override public void onError(Throwable e) {
+    @Override
+    public void onError(Throwable e) {
       UserDetailsPresenter.this.hideViewLoading();
       UserDetailsPresenter.this.showErrorMessage(new DefaultErrorBundle((Exception) e));
       UserDetailsPresenter.this.showViewRetry();
     }
 
-    @Override public void onNext(User user) {
+    @Override
+    public void onNext(User user) {
       UserDetailsPresenter.this.showUserDetailsInView(user);
     }
   }

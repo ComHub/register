@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,7 +29,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.not;
 
 public class UserDetailsActivityTest extends ActivityInstrumentationTestCase2<UserDetailsActivity> {
 
@@ -41,19 +40,21 @@ public class UserDetailsActivityTest extends ActivityInstrumentationTestCase2<Us
     super(UserDetailsActivity.class);
   }
 
-  @Override protected void setUp() throws Exception {
+  @Override
+  protected void setUp() throws Exception {
     super.setUp();
     this.setActivityIntent(createTargetIntent());
     this.userDetailsActivity = getActivity();
   }
 
-  @Override protected void tearDown() throws Exception {
+  @Override
+  protected void tearDown() throws Exception {
     super.tearDown();
   }
 
   public void testContainsUserDetailsFragment() {
     Fragment userDetailsFragment =
-        userDetailsActivity.getFragmentManager().findFragmentById(R.id.fragmentContainer);
+      userDetailsActivity.getFragmentManager().findFragmentById(R.id.fragmentContainer);
     assertThat(userDetailsFragment, is(notNullValue()));
   }
 
@@ -80,7 +81,7 @@ public class UserDetailsActivityTest extends ActivityInstrumentationTestCase2<Us
 
   private Intent createTargetIntent() {
     Intent intentLaunchActivity =
-        UserDetailsActivity.getCallingIntent(getInstrumentation().getTargetContext(), FAKE_USER_ID);
+      UserDetailsActivity.getCallingIntent(getInstrumentation().getTargetContext(), FAKE_USER_ID);
 
     return intentLaunchActivity;
   }

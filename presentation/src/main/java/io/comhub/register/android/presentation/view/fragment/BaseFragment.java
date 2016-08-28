@@ -13,6 +13,7 @@ import io.comhub.register.android.presentation.internal.di.HasComponent;
  * Base {@link android.app.Fragment} class for every fragment in this application.
  */
 public abstract class BaseFragment extends Fragment {
+
   /**
    * Shows a {@link android.widget.Toast} message.
    *

@@ -36,6 +36,7 @@ public class UserListFragment extends BaseFragment implements UserListView {
    * Interface for listening user list events.
    */
   public interface UserListListener {
+
     void onUserClicked(final UserModel userModel);
   }
 
@@ -53,27 +54,31 @@ public class UserListFragment extends BaseFragment implements UserListView {
     setRetainInstance(true);
   }
 
-  @Override public void onAttach(Activity activity) {
+  @Override
+  public void onAttach(Activity activity) {
     super.onAttach(activity);
     if (activity instanceof UserListListener) {
       this.userListListener = (UserListListener) activity;
     }
   }
 
-  @Override public void onCreate(Bundle savedInstanceState) {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     this.getComponent(UserComponent.class).inject(this);
   }
 
-  @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState) {
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                           Bundle savedInstanceState) {
     final View fragmentView = inflater.inflate(R.layout.fragment_user_list, container, false);
     ButterKnife.bind(this, fragmentView);
     setupRecyclerView();
     return fragmentView;
   }
 
-  @Override public void onViewCreated(View view, Bundle savedInstanceState) {
+  @Override
+  public void onViewCreated(View view, Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     this.userListPresenter.setView(this);
     if (savedInstanceState == null) {
@@ -81,67 +86,80 @@ public class UserListFragment extends BaseFragment implements UserListView {
     }
   }
 
-  @Override public void onResume() {
+  @Override
+  public void onResume() {
     super.onResume();
     this.userListPresenter.resume();
   }
 
-  @Override public void onPause() {
+  @Override
+  public void onPause() {
     super.onPause();
     this.userListPresenter.pause();
   }
 
-  @Override public void onDestroyView() {
+  @Override
+  public void onDestroyView() {
     super.onDestroyView();
     rv_users.setAdapter(null);
     ButterKnife.unbind(this);
   }
 
-  @Override public void onDestroy() {
+  @Override
+  public void onDestroy() {
     super.onDestroy();
     this.userListPresenter.destroy();
   }
 
-  @Override public void onDetach() {
+  @Override
+  public void onDetach() {
     super.onDetach();
     this.userListListener = null;
   }
 
-  @Override public void showLoading() {
+  @Override
+  public void showLoading() {
     this.rl_progress.setVisibility(View.VISIBLE);
     this.getActivity().setProgressBarIndeterminateVisibility(true);
   }
 
-  @Override public void hideLoading() {
+  @Override
+  public void hideLoading() {
     this.rl_progress.setVisibility(View.GONE);
     this.getActivity().setProgressBarIndeterminateVisibility(false);
   }
 
-  @Override public void showRetry() {
+  @Override
+  public void showRetry() {
     this.rl_retry.setVisibility(View.VISIBLE);
   }
 
-  @Override public void hideRetry() {
+  @Override
+  public void hideRetry() {
     this.rl_retry.setVisibility(View.GONE);
   }
 
-  @Override public void renderUserList(Collection<UserModel> userModelCollection) {
+  @Override
+  public void renderUserList(Collection<UserModel> userModelCollection) {
     if (userModelCollection != null) {
       this.usersAdapter.setUsersCollection(userModelCollection);
     }
   }
 
-  @Override public void viewUser(UserModel userModel) {
+  @Override
+  public void viewUser(UserModel userModel) {
     if (this.userListListener != null) {
       this.userListListener.onUserClicked(userModel);
     }
   }
 
-  @Override public void showError(String message) {
+  @Override
+  public void showError(String message) {
     this.showToastMessage(message);
   }
 
-  @Override public Context context() {
+  @Override
+  public Context context() {
     return this.getActivity().getApplicationContext();
   }
 
@@ -158,16 +176,18 @@ public class UserListFragment extends BaseFragment implements UserListView {
     this.userListPresenter.initialize();
   }
 
-  @OnClick(R.id.bt_retry) void onButtonRetryClick() {
+  @OnClick(R.id.bt_retry)
+  void onButtonRetryClick() {
     UserListFragment.this.loadUserList();
   }
 
   private UsersAdapter.OnItemClickListener onItemClickListener =
-      new UsersAdapter.OnItemClickListener() {
-        @Override public void onUserItemClicked(UserModel userModel) {
-          if (UserListFragment.this.userListPresenter != null && userModel != null) {
-            UserListFragment.this.userListPresenter.onUserClicked(userModel);
-          }
+    new UsersAdapter.OnItemClickListener() {
+      @Override
+      public void onUserItemClicked(UserModel userModel) {
+        if (UserListFragment.this.userListPresenter != null && userModel != null) {
+          UserListFragment.this.userListPresenter.onUserClicked(userModel);
         }
-      };
+      }
+    };
 }

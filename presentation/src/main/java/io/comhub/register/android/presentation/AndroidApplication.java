@@ -17,7 +17,6 @@ package io.comhub.register.android.presentation;
 
 import android.app.Application;
 import com.squareup.leakcanary.LeakCanary;
-import io.comhub.register.android.presentation.BuildConfig;
 import io.comhub.register.android.presentation.internal.di.components.ApplicationComponent;
 import io.comhub.register.android.presentation.internal.di.components.DaggerApplicationComponent;
 import io.comhub.register.android.presentation.internal.di.modules.ApplicationModule;
@@ -29,7 +28,8 @@ public class AndroidApplication extends Application {
 
   private ApplicationComponent applicationComponent;
 
-  @Override public void onCreate() {
+  @Override
+  public void onCreate() {
     super.onCreate();
     this.initializeInjector();
     this.initializeLeakDetection();
@@ -37,8 +37,8 @@ public class AndroidApplication extends Application {
 
   private void initializeInjector() {
     this.applicationComponent = DaggerApplicationComponent.builder()
-        .applicationModule(new ApplicationModule(this))
-        .build();
+                                                          .applicationModule(new ApplicationModule(this))
+                                                          .build();
   }
 
   public ApplicationComponent getApplicationComponent() {
