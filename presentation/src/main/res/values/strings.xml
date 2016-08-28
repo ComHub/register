@@ -4,6 +4,7 @@
   <string name="url">http://www.android10.org/</string>
 
   <string name="activity_title_user_login">User Login</string>
+  <string name="activity_title_user_register">New Account</string>
   <string name="activity_title_user_list">Users List</string>
   <string name="activity_title_user_details">User Details</string>
 

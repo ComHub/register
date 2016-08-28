@@ -42,7 +42,7 @@ public class UserRegisterFragment extends BaseFragment implements UserRegisterVi
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState) {
-    final View fragmentView = inflater.inflate(R.layout.fragment_user_login, container, false);
+    final View fragmentView = inflater.inflate(R.layout.fragment_user_register, container, false);
     ButterKnife.bind(this, fragmentView);
     return fragmentView;
   }
@@ -59,9 +59,8 @@ public class UserRegisterFragment extends BaseFragment implements UserRegisterVi
     this.userRegisterPresenter.setView(this);
     this.userRegisterPresenter.initialize();
   }
-  
-  private void setupUI() {
 
+  private void setupUI() {
   }
 
   @Override
@@ -89,8 +88,13 @@ public class UserRegisterFragment extends BaseFragment implements UserRegisterVi
   }
 
   @Override
-  public void loadRegistrationUrl(@NonNull String registrationUrl, String mimeType, String encoding) {
-    this.wv_register.loadData(registrationUrl, mimeType, encoding);
+  public void loadRegistrationUrl(@NonNull String registrationUrl) {
+    this.wv_register.loadUrl(registrationUrl);
+  }
+
+  @Override
+  public WebView getWebView() {
+    return this.wv_register;
   }
 
   @Override

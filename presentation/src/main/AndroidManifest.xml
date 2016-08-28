@@ -27,6 +27,10 @@
       android:label="@string/activity_title_user_login"/>
 
     <activity
+      android:name=".view.user.register.UserRegisterActivity"
+      android:label="@string/activity_title_user_register"/>
+
+    <activity
       android:name=".view.activity.UserListActivity"
       android:label="@string/activity_title_user_list"/>
 

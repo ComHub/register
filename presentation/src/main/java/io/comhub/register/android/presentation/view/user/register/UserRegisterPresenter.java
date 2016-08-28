@@ -16,11 +16,13 @@
 package io.comhub.register.android.presentation.view.user.register;
 
 import android.support.annotation.NonNull;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import io.comhub.register.android.domain.exception.ErrorBundle;
-import io.comhub.register.android.domain.user.interactor.UserLogin;
 import io.comhub.register.android.presentation.exception.ErrorMessageFactory;
 import io.comhub.register.android.presentation.internal.di.PerActivity;
-import io.comhub.register.android.presentation.mapper.UserModelDataMapper;
 import io.comhub.register.android.presentation.presenter.Presenter;
 import javax.inject.Inject;
 
@@ -31,20 +33,14 @@ import javax.inject.Inject;
 @PerActivity
 class UserRegisterPresenter implements Presenter {
 
-  private UserRegisterView viewLogin;
-
-  private final UserLogin userLoginUseCase;
-  private final UserModelDataMapper userModelDataMapper;
+  private UserRegisterView viewRegister;
 
   @Inject
-  public UserRegisterPresenter(UserLogin userLoginUseCase,
-                               UserModelDataMapper userModelDataMapper) {
-    this.userLoginUseCase = userLoginUseCase;
-    this.userModelDataMapper = userModelDataMapper;
+  public UserRegisterPresenter() {
   }
 
   public void setView(@NonNull UserRegisterView view) {
-    this.viewLogin = view;
+    this.viewRegister = view;
   }
 
   @Override
@@ -55,14 +51,14 @@ class UserRegisterPresenter implements Presenter {
 
   @Override
   public void destroy() {
-    this.userLoginUseCase.unsubscribe();
-    this.viewLogin = null;
+    this.viewRegister = null;
   }
 
   /**
    * Initializes the presenter
    */
   void initialize() {
+    this.initWebView();
     this.loadRegistrationUrl();
   }
 
@@ -70,29 +66,51 @@ class UserRegisterPresenter implements Presenter {
     this.loadRegistrationUrl();
   }
 
+  private void initWebView() {
+    this.viewRegister.getWebView().setWebViewClient(new WebViewClient() {
+
+      @Override
+      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        view.loadUrl(url);
+        return true;
+      }
+
+      @Override
+      public void onPageFinished(WebView view, String url) {
+        UserRegisterPresenter.this.hideViewLoading();
+      }
+
+      @Override
+      public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+        super.onReceivedError(view, request, error);
+      }
+    });
+  }
+
   private void loadRegistrationUrl() {
-    this.viewLogin.loadRegistrationUrl("http://www.google.com", "text/html", "UTF-8");
+    this.showViewLoading();
+    this.viewRegister.loadRegistrationUrl("http://www.google.com");
   }
 
   private void showViewLoading() {
-    this.viewLogin.showLoading();
+    this.viewRegister.showLoading();
   }
 
   private void hideViewLoading() {
-    this.viewLogin.hideLoading();
+    this.viewRegister.hideLoading();
   }
 
   private void showViewRetry() {
-    this.viewLogin.showRetry();
+    this.viewRegister.showRetry();
   }
 
   private void hideViewRetry() {
-    this.viewLogin.hideRetry();
+    this.viewRegister.hideRetry();
   }
 
   private void showErrorMessage(ErrorBundle errorBundle) {
-    String errorMessage = ErrorMessageFactory.create(this.viewLogin.context(),
+    String errorMessage = ErrorMessageFactory.create(this.viewRegister.context(),
                                                      errorBundle.getException());
-    this.viewLogin.showError(errorMessage);
+    this.viewRegister.showError(errorMessage);
   }
 }

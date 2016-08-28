@@ -6,6 +6,7 @@
 package io.comhub.register.android.presentation.view.user.register;
 
 import android.support.annotation.NonNull;
+import android.webkit.WebView;
 import io.comhub.register.android.presentation.view.LoadDataView;
 
 /**
@@ -14,5 +15,7 @@ import io.comhub.register.android.presentation.view.LoadDataView;
  */
 interface UserRegisterView extends LoadDataView {
 
-  void loadRegistrationUrl(@NonNull  String registrationUrl, String mimeType, String encoding);
+  void loadRegistrationUrl(@NonNull  String registrationUrl);
+
+  WebView getWebView();
 }

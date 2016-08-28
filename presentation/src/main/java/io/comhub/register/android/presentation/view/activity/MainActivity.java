@@ -36,4 +36,12 @@ public class MainActivity extends io.comhub.register.android.presentation.view.a
   void navigateToUserLogin() {
     this.navigator.navigateToUserLogin(this);
   }
+
+  /**
+   * Goes to the user registration screen.
+   */
+  @OnClick(R.id.btn_userRegistration)
+  void navigateToUserRegistration() {
+    this.navigator.navigateToRegistration(this);
+  }
 }
