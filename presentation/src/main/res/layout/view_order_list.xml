@@ -3,6 +3,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   android:background="@android:color/white"
   android:orientation="vertical"
   tools:context=".view.home.HomeActivity">
@@ -28,24 +29,26 @@
 
     <include layout="@layout/view_separator"/>
 
-    <TextView
+    <io.comhub.register.android.presentation.view.widget.RobotoTextView
       android:layout_weight="0.2"
       android:layout_width="match_parent"
-      android:layout_height="30dp"
+      android:layout_height="30sp"
       android:gravity="center"
       android:textStyle="bold"
+      app:typeface="roboto_regular"
       android:textSize="50dp"
       android:text="67.50 Sek"/>
 
-    <TextView
+    <io.comhub.register.android.presentation.view.widget.RobotoTextView
       android:layout_weight="0.1"
       android:layout_width="match_parent"
-      android:layout_height="30dp"
+      android:layout_height="30sp"
       android:gravity="center"
       android:background="@android:color/holo_blue_dark"
       android:textColor="@android:color/white"
       android:textStyle="bold"
-      android:textSize="30dp"
+      app:typeface="roboto_regular"
+      android:textSize="20dp"
       android:text="Charge"/>
 
   </LinearLayout>

@@ -9,12 +9,12 @@
     android:id="@+id/fragmentProductGridContainer"
     android:layout_width="0dp"
     android:layout_height="match_parent"
-    android:layout_weight="0.65" />
+    android:layout_weight="0.60" />
 
   <FrameLayout
     android:id="@+id/fragmentOrderListContainer"
     android:layout_width="0dp"
     android:layout_height="match_parent"
-    android:layout_weight="0.35" />
+    android:layout_weight="0.40" />
 
 </LinearLayout>
