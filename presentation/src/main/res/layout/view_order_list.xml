@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content"
-  android:layout_gravity="center"
-  android:gravity="center"
-  android:text="This is the order list" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@android:color/white"
+  android:orientation="vertical"
+  tools:context=".view.home.HomeActivity">
+
+  <android.support.v7.widget.Toolbar
+    android:id="@+id/tb_oder_list"
+    style="@style/Theme.ComHub.Register.Toolbar" />
+
+  <include layout="@layout/view_separator"/>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/tv_order_list"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_weight="0.7"
+      android:text="This is the order list" />
+
+    <include layout="@layout/view_separator"/>
+
+    <TextView
+      android:layout_weight="0.2"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:gravity="center"
+      android:textStyle="bold"
+      android:textSize="50dp"
+      android:text="67.50 Sek"/>
+
+    <TextView
+      android:layout_weight="0.1"
+      android:layout_width="match_parent"
+      android:layout_height="30dp"
+      android:gravity="center"
+      android:background="@android:color/holo_blue_dark"
+      android:textColor="@android:color/white"
+      android:textStyle="bold"
+      android:textSize="30dp"
+      android:text="Charge"/>
+
+  </LinearLayout>
+
+</LinearLayout>
 

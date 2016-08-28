@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:layout_below="@+id/tb_oder_list"
+  android:layout_width="match_parent"
+  android:layout_height="1px"
+  android:background="@color/comhub_separator_color"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -24,4 +24,7 @@
     <color name="textColorOnLightBackground">#000000</color>
 
 
+    <color name="comhub_separator_color">#AA999999</color>
+
+
 </resources>
