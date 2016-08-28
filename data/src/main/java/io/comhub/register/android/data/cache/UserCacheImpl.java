@@ -31,7 +31,7 @@ import rx.Observable;
 @Singleton
 public class UserCacheImpl implements UserCache {
 
-  private static final String SETTINGS_FILE_NAME = "com.fernandocejas.android10.SETTINGS";
+  private static final String SETTINGS_FILE_NAME = "io.comhub.register.android.SETTINGS";
   private static final String SETTINGS_KEY_LAST_CACHE_UPDATE = "last_cache_update";
 
   private static final String DEFAULT_FILE_NAME = "user_";

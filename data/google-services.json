@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1070115915576",
+    "firebase_url": "https://comhub-register.firebaseio.com",
+    "project_id": "comhub-register",
+    "storage_bucket": "comhub-register.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070115915576:android:644bcf0373b4c227",
+        "android_client_info": {
+          "package_name": "io.comhub.register.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070115915576-8ejbrs59cblv9s2m554v9cl6uaptn5k4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.comhub.register.android",
+            "certificate_hash": "7D5D6015614DC1FB69287BFC15A7F33F86B68E29"
+          }
+        },
+        {
+          "client_id": "1070115915576-rr3jrftj6fliusomaud4743f7rg3g5b9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0I6KGNZRPs2AfHNrauPyM2ZPregZfhk0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070115915576-rr3jrftj6fliusomaud4743f7rg3g5b9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
