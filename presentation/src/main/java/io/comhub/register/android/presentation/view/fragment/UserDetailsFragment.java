@@ -21,6 +21,7 @@ import io.comhub.register.android.presentation.internal.di.components.UserCompon
 import io.comhub.register.android.presentation.model.UserModel;
 import io.comhub.register.android.presentation.presenter.UserDetailsPresenter;
 import io.comhub.register.android.presentation.view.UserDetailsView;
+import io.comhub.register.android.presentation.view.base.BaseFragment;
 import io.comhub.register.android.presentation.view.component.AutoLoadImageView;
 import javax.inject.Inject;
 

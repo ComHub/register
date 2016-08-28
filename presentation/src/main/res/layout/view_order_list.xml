@@ -8,9 +8,8 @@
   android:orientation="vertical"
   tools:context=".view.home.HomeActivity">
 
-  <android.support.v7.widget.Toolbar
-    android:id="@+id/tb_oder_list"
-    style="@style/Theme.ComHub.Register.Toolbar" />
+  <include android:id="@+id/tb_oder_list"
+    layout="@layout/view_toolbar"/>
 
   <include layout="@layout/view_separator"/>
 
@@ -36,10 +35,11 @@
       android:gravity="center"
       android:textStyle="bold"
       app:typeface="roboto_regular"
-      android:textSize="50dp"
-      android:text="67.50 Sek"/>
+      android:textSize="50sp"
+      android:text="67,50 Sek"/>
 
     <io.comhub.register.android.presentation.view.widget.RobotoTextView
+      android:id="@+id/bt_charge"
       android:layout_weight="0.1"
       android:layout_width="match_parent"
       android:layout_height="30sp"
@@ -48,7 +48,7 @@
       android:textColor="@android:color/white"
       android:textStyle="bold"
       app:typeface="roboto_regular"
-      android:textSize="20dp"
+      android:textSize="20sp"
       android:text="Charge"/>
 
   </LinearLayout>

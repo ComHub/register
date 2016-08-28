@@ -1,4 +1,4 @@
-package io.comhub.register.android.presentation.view.activity;
+package io.comhub.register.android.presentation.view.base;
 
 import android.app.Activity;
 import android.app.Fragment;

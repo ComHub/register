@@ -6,7 +6,7 @@ import io.comhub.register.android.presentation.internal.di.HasComponent;
 import io.comhub.register.android.presentation.internal.di.components.DaggerHomeComponent;
 import io.comhub.register.android.presentation.internal.di.components.HomeComponent;
 import io.comhub.register.android.presentation.internal.di.modules.HomeModule;
-import io.comhub.register.android.presentation.view.activity.BaseActivity;
+import io.comhub.register.android.presentation.view.base.BaseActivity;
 import io.comhub.register.android.presentation.view.home.order.OrderListFragment;
 import io.comhub.register.android.presentation.view.home.product.ProductGridFragment;
 

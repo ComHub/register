@@ -14,6 +14,7 @@ import io.comhub.register.android.presentation.internal.di.HasComponent;
 import io.comhub.register.android.presentation.internal.di.components.DaggerUserComponent;
 import io.comhub.register.android.presentation.internal.di.components.UserComponent;
 import io.comhub.register.android.presentation.model.UserModel;
+import io.comhub.register.android.presentation.view.base.BaseActivity;
 import io.comhub.register.android.presentation.view.fragment.UserListFragment;
 
 /**

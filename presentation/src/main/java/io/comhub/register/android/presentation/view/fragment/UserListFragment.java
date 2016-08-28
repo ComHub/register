@@ -24,6 +24,7 @@ import io.comhub.register.android.presentation.presenter.UserListPresenter;
 import io.comhub.register.android.presentation.view.UserListView;
 import io.comhub.register.android.presentation.view.adapter.UsersAdapter;
 import io.comhub.register.android.presentation.view.adapter.UsersLayoutManager;
+import io.comhub.register.android.presentation.view.base.BaseFragment;
 import java.util.Collection;
 import javax.inject.Inject;
 

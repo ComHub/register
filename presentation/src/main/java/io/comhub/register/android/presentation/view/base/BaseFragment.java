@@ -3,7 +3,7 @@
  *
  * @author Fernando Cejas (the android10 coder)
  */
-package io.comhub.register.android.presentation.view.fragment;
+package io.comhub.register.android.presentation.view.base;
 
 import android.app.Fragment;
 import android.widget.Toast;

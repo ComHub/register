@@ -8,7 +8,7 @@ import io.comhub.register.android.presentation.internal.di.HasComponent;
 import io.comhub.register.android.presentation.internal.di.components.DaggerUserComponent;
 import io.comhub.register.android.presentation.internal.di.components.UserComponent;
 import io.comhub.register.android.presentation.internal.di.modules.UserModule;
-import io.comhub.register.android.presentation.view.activity.BaseActivity;
+import io.comhub.register.android.presentation.view.base.BaseActivity;
 
 public class UserLoginActivity extends BaseActivity implements HasComponent<UserComponent> {
 

@@ -15,25 +15,19 @@
  */
 package io.comhub.register.android.presentation.internal.di.components;
 
-import android.app.Activity;
-import android.view.LayoutInflater;
 import dagger.Component;
-import io.comhub.register.android.presentation.internal.di.PerActivity;
+import io.comhub.register.android.presentation.internal.di.PerFragment;
 import io.comhub.register.android.presentation.internal.di.modules.ActivityModule;
+import io.comhub.register.android.presentation.internal.di.modules.PaymentModule;
+import io.comhub.register.android.presentation.view.payment.PaymentMethodDialogFragment;
 
 /**
- * A base component upon which fragment's components may depend.
- * Activity-level components should extend this component.
- *
- * Subtypes of ActivityComponent should be decorated with annotation:
- * {@link io.comhub.register.android.presentation.internal.di.PerActivity}
+ * A scope {@link PerFragment} component.
+ * Injects payment specific Fragments.
  */
-@PerActivity
-@Component(dependencies = ApplicationComponent.class, modules = ActivityModule.class)
-public interface ActivityComponent {
+@PerFragment
+@Component(dependencies = ApplicationComponent.class, modules = { ActivityModule.class, PaymentModule.class })
+public interface PaymentComponent {
 
-  //Exposed to sub-graphs.
-  Activity activity();
-
-  LayoutInflater layoutInflater();
+  void inject(PaymentMethodDialogFragment paymentMethodDialogFragment);
 }

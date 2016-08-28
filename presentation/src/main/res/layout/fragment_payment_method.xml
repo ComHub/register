@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical">
+
+  <include
+    android:id="@+id/tb_payment_method"
+    layout="@layout/view_toolbar" />
+
+  <include layout="@layout/view_separator" />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <io.comhub.register.android.presentation.view.widget.RobotoTextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No card reader connected"
+      android:textSize="30sp"
+      android:textStyle="bold"
+      app:typeface="roboto_regular" />
+
+    <io.comhub.register.android.presentation.view.widget.RobotoTextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Connect a card reader to accept easy card payments."
+      android:textSize="20sp"
+      android:textColor="@color/colorLightGrey"
+      app:typeface="roboto_regular" />
+
+    <io.comhub.register.android.presentation.view.widget.RobotoTextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:color/holo_green_light"
+      android:layout_centerInParent="true"
+      android:text="Connet card reader"
+      android:layout_marginTop="20dp"
+      android:textSize="15sp"
+      android:padding="10dp"
+      android:textColor="@android:color/white"
+      app:typeface="roboto_regular" />
+
+  </LinearLayout>
+
+
+</LinearLayout>

@@ -6,11 +6,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.comhub.register.android.presentation.R;
+import io.comhub.register.android.presentation.view.base.BaseActivity;
 
 /**
  * Main application screen. This is the app entry point.
  */
-public class MainActivity extends io.comhub.register.android.presentation.view.activity.BaseActivity {
+public class MainActivity extends BaseActivity {
 
   @Bind(R.id.btn_LoadData) Button btn_LoadData;
 

@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.comhub.register.android.presentation.R;
 import io.comhub.register.android.presentation.internal.di.components.HomeComponent;
-import io.comhub.register.android.presentation.view.fragment.BaseFragment;
+import io.comhub.register.android.presentation.view.base.BaseFragment;
 import javax.inject.Inject;
 
 /**

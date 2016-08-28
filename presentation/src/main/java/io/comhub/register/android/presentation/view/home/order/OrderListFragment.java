@@ -12,7 +12,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.comhub.register.android.presentation.R;
 import io.comhub.register.android.presentation.internal.di.components.HomeComponent;
-import io.comhub.register.android.presentation.view.fragment.BaseFragment;
+import io.comhub.register.android.presentation.view.base.BaseFragment;
+import io.comhub.register.android.presentation.view.payment.PaymentMethodDialogFragment;
 import javax.inject.Inject;
 
 /**
@@ -115,5 +116,10 @@ public class OrderListFragment extends BaseFragment implements OrderListView {
 
   @OnClick(R.id.bt_retry)
   void onButtonRetryClick() {
+  }
+
+  @OnClick(R.id.bt_charge)
+  void onChargeButtonClick() {
+    PaymentMethodDialogFragment.newInstance().show(getFragmentManager(), "Payment Method");
   }
 }

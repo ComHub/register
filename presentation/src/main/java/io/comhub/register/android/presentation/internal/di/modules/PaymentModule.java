@@ -15,36 +15,13 @@
  */
 package io.comhub.register.android.presentation.internal.di.modules;
 
-import android.app.Activity;
-import android.view.LayoutInflater;
 import dagger.Module;
-import dagger.Provides;
-import io.comhub.register.android.presentation.internal.di.PerActivity;
 
 /**
- * A module to wrap the Activity state and expose it to the graph.
+ * Dagger module that provides payment related collaborators.
  */
 @Module
-public class ActivityModule {
-
-  private final Activity activity;
-
-  public ActivityModule(Activity activity) {
-    this.activity = activity;
-  }
-
-  /**
-   * Expose the activity to dependents in the graph.
-   */
-  @Provides
-  @PerActivity
-  Activity activity() {
-    return this.activity;
-  }
-
-  @Provides
-  @PerActivity
-  LayoutInflater providesLayoutInflater() {
-    return this.activity.getLayoutInflater();
+public class PaymentModule {
+  public PaymentModule() {
   }
 }
