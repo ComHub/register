@@ -16,10 +16,10 @@
 package io.comhub.register.android.presentation.internal.di.modules;
 
 import android.content.Context;
-import com.fernandocejas.android10.sample.data.cache.UserCache;
-import com.fernandocejas.android10.sample.data.cache.UserCacheImpl;
-import com.fernandocejas.android10.sample.data.executor.JobExecutor;
-import com.fernandocejas.android10.sample.data.repository.UserDataRepository;
+import io.comhub.register.android.data.cache.UserCache;
+import io.comhub.register.android.data.cache.UserCacheImpl;
+import io.comhub.register.android.data.executor.JobExecutor;
+import io.comhub.register.android.data.repository.UserDataRepository;
 import io.comhub.register.android.domain.executor.PostExecutionThread;
 import io.comhub.register.android.domain.executor.ThreadExecutor;
 import io.comhub.register.android.domain.repository.UserRepository;
